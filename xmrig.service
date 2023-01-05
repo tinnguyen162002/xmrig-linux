@@ -1,0 +1,17 @@
+[Unit]
+Description=XMRig Monero Miner
+After=network.target
+
+[Service]
+User=xmrig
+Group=xmrig
+
+StandardOutput=journal
+StandardError=journal
+
+ExecStart=/opt/xmrig/xmrig --config=/opt/xmrig/config.json --log-file=/opt/xmrig/xmrig.log
+
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
